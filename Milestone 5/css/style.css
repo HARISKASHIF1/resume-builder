@@ -1,0 +1,153 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #1e3c72, #2a5298, #6a11cb);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-title {
+  color: #e3f2fd;
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: underline #80deea 5px;
+  margin-bottom: 20px;
+  animation: head linear 2s forwards;  
+}
+
+@keyframes head {
+  from {transform: scaleY(25deg); opacity: 0;}
+  to {transform: scaleY(1); opacity: 1;}
+}
+
+.resume-border {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48%;
+  margin: 30px auto;
+  padding: 8px;
+  border-radius: 10px;
+  max-width: 500px;
+  background-color: #6a11cb;
+  overflow: hidden;
+}
+
+.resume-border::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+  height: 1380px;
+  width: 150px;
+  background-color: #e3f2fd;
+  animation: border 1.5s infinite;
+}
+
+@keyframes border {
+  100% {
+    transform: translate(-50%,-50%) rotate(225deg);
+  }
+}
+
+.form-container, .resume-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  color: #e0f7fa;
+  border-radius: 10px;
+  background: #212b4f;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.5s ease;
+  z-index: 99;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #bbdefb;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+input, textarea {
+  width: 85%;
+  padding: 12px;
+  margin: 10px 0;
+  color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), inset 0 0px 5px rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+button, .downloadPDF {
+  text-decoration: none;
+  width: 45%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5e35b1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+button:hover, .downloadPDF:hover {
+  background-color: #7e57c2;
+  transform: scale(1.05);
+}
+
+button:active, .downloadPDF:active {
+  transform: scale(0.98);
+  background-color: #4527a0;
+}
+
+.downloadPDF {
+  width: 70%;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+   .resume-border, .resume-container {
+    width: 75%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

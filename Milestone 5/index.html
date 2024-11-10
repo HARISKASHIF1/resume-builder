@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareable Resume Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="head-title">Shareable Resume</div>
+    
+    <div class="resume-border">
+        <div class="form-container">
+            <h1>Fill out your details</h1>
+            <form id="resumeForm">
+                <div class="section">
+                    <h3>Personal Information</h3>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" required>
+                </div>
+    
+                <div class="section">
+                    <h3>Education</h3>
+                    <label for="degree">Degree:</label>
+                    <input type="text" id="degree" required>
+                    <label for="school">School:</label>
+                    <input type="text" id="school" required>
+                    <label for="gradDate">Graduation Date:</label>
+                    <input type="date" id="gradDate" required>
+                </div>
+    
+                <div class="section">
+                    <h3>Work Experience</h3>
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" required>
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" required>
+                    <label for="duration">Duration:</label>
+                    <input type="text" id="duration" required>
+                </div>
+    
+                <div class="section">
+                    <h3>Skills</h3>
+                    <label for="skills">Skills (comma separated):</label>
+                    <input type="text" id="skills" required>
+                </div>
+    
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="resume-container" id="resumeContainer">
+        <h2>Your Resume</h2>
+        <!-- Resume will bew generated below -->
+        <div id="resumeContent"></div>
+        <br>
+        <!-- Shareable button -->
+        <div class="shareable-button" style="display: block; ;">
+            <button style="color: white;"><a href="#" id="shareable-link" target="_blank" style="text-decoration: none; color: white;">Share Link</a></button>
+            <button id="download-pdf"><b>Download as PDF</b></button>
+        </div>
+        <p id="generatedLink"></p>
+    </div>
+
+    <script src="dist/main.js" type="module"></script>
+</body>
+</html>
